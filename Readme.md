@@ -1,7 +1,7 @@
 # Личный проект «Кекстаграм»
 
 * Студент: [Алексей Игонин](https://up.htmlacademy.ru/javascript/25/user/851543).
-* Наставник: `Неизвестно`.
+* Наставник: [Никита Сигов](https://htmlacademy.ru/profile/crazer).
 
 ---
 
