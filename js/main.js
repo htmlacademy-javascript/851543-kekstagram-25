@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
 /* eslint-disable eqeqeq */
-function getRandomInt(max) {
-  return Math.floor(Math.random() * max);
+function getRandomInt(min, max) {
+  return Math.floor(Math.random() * min, max);
 }
 
 const int = getRandomInt(2);
@@ -12,6 +12,15 @@ if (int == 1) {
   console.log('Нет');
 }
 
-const string = ('СложнА');
+const square = function () {
+  const text = 'qwerty';
+  const result = text.length;
+  return result;
+};
 
-console.log(`Слово "СложнА" занимает ${  string.length  } символов`);
+const end = square();
+if(end <= 7) {
+  console.log(true);
+} else {
+  console.log(false);
+}
