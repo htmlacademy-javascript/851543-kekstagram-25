@@ -1,26 +1,24 @@
 /* eslint-disable no-console */
 /* eslint-disable eqeqeq */
 function getRandomInt(min, max) {
-  return Math.floor(Math.random() * min, max);
+  const int = Math.floor(Math.random(min, max));
+  if (int >= min || int <= max) {
+    console.log(true);
+  }else if (min > max) {
+    console.log(false);
+  } else {
+    console.log(false);
+  }
 }
 
-const int = getRandomInt(2);
+getRandomInt(1, 5);
 
-if (int == 1) {
-  console.log('Да');
-} else {
-  console.log('Нет');
+function test (a, b = 100) {
+  if (a.length <= b) {
+    console.log(true);
+  } else {
+    console.log(false);
+  }
 }
 
-const square = function () {
-  const text = 'qwerty';
-  const result = text.length;
-  return result;
-};
-
-const end = square();
-if(end <= 7) {
-  console.log(true);
-} else {
-  console.log(false);
-}
+test('Любая строка короче ста символов');
