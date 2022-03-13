@@ -23,49 +23,46 @@ stringLength('Любая строка короче ста символов');
 // console.log (stringLength('Любая строка больше ста символов (Любая строка больше ста символов)'));
 
 
-const id = [];
-for (let i = 0; i < 25; i++) {
-  id[i] = i + 1;
-}
-
-const avatar = [];
-for (let i = 0; i < 6; i++) {
-  avatar[i] = i + 1;
-}
-
-const names = ['Артём', 'Дмитрий', 'Иван', 'Сергей'];
-const message = ['Всё отлично!', 'В целом всё неплохо. Но не всё.'];
-
+const ID = [];
+const PHOTOS = [];
+const NAMES = ['Артём', 'Дмитрий', 'Иван', 'Сергей', 'Алексей', 'Иван',];
+const DESCRIPTION = ['Звёздная ночь', 'Последний день Помпеи', 'Грачи прилетели', 'Мокрый луг', 'Девятый вал'];
+const MESSAGE = ['Когда вы делаете фотографию, хорошо бы убирать палец из кадра. В конце концов это просто непрофессионально.', 'Моя бабушка случайно чихнула с фотоаппаратом в руках и у неё получилась фотография лучше.', 'Я поскользнулся на банановой кожуре и уронил фотоаппарат на кота и у меня получилась фотография лучше.',]
 const getRandomPositiveInteger = (a, b) => {
-  const lower = Math.ceil(Math.min(Math.abs(a), Math.abs(b)));
-  const upper = Math.floor(Math.max(Math.abs(a), Math.abs(b)));
-  const result = Math.random() * (upper - lower + 1) + lower;
-  return Math.floor(result);
+  const LOWER = Math.ceil(Math.min(Math.abs(a), Math.abs(b)));
+  const UPPER = Math.floor(Math.max(Math.abs(a), Math.abs(b)));
+  const RESULT = Math.random() * (UPPER - LOWER + 1) + LOWER;
+  return Math.floor(RESULT);
 };
 
-
-const post = () => {
-  const randomName = getRandomPositiveInteger(0, names.length - 1);
-  const randomMassage = getRandomPositiveInteger(0, message.length - 1);
-  const randomId = getRandomPositiveInteger(0, id.length - 1);
-  const randomAvatar = getRandomPositiveInteger(0, avatar.length - 1);
+const generatePost = () => {
+  const randomNameIndex = getRandomPositiveInteger(0, NAMES.length - 1);
+  const randomDescriptionIndex = getRandomPositiveInteger(0, DESCRIPTION.length - 1);
+  const randomIdIndex = getRandomPositiveInteger(0, ID.length - 1);
+  const randomAvatarIndex = getRandomPositiveInteger(0, PHOTOS.length - 1);
+  const randomMassageIndex = getRandomPositiveInteger(0, MESSAGE.length - 1);
 
   return {
-    id: id[randomId],
-    avatar: `img/avatar-${  avatar[randomAvatar]  }.img`,
-    message: message[randomMassage],
-    names: names[randomName],
+    id: ID[randomIdIndex],
+    url: `photos/${  PHOTOS[randomAvatarIndex]  }.jpg`,
+    description: DESCRIPTION[randomDescriptionIndex],
+    names: NAMES[randomNameIndex],
+    likes: getRandomPositiveInteger(15, 200),
+    message: MESSAGE[randomMassageIndex],
+    avatar: `img/avatar-${  getRandomPositiveInteger(1, 6)  }.svg`,
   };
 };
 
-console.log(
-  post()
-);
+const creatingArrayOne = () => {
+  const descriptionPhoto = [];
+  for (let i = 0; i < 25; i++) {
+    ID[i] = i + 1;
+    PHOTOS[i] = i + 1;
+    descriptionPhoto.push(generatePost());
+  }
+  return descriptionPhoto;
+};
 
-const descriptionPhoto = [];
+creatingArrayOne();
 
-for (let i = 0; i < 25; i++) {
-  descriptionPhoto.push(post());
-}
-
-// console.log (descriptionPhoto);
+console.log (creatingArrayOne());
