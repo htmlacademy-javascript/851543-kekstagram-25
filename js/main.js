@@ -23,7 +23,7 @@ stringLength('Любая строка короче ста символов');
 // console.log (stringLength('Любая строка больше ста символов (Любая строка больше ста символов)'));
 
 
-let id;
+// let id;
 const NAMES = ['Артём', 'Дмитрий', 'Иван', 'Сергей', 'Алексей', 'Иван',];
 const DESCRIPTION = ['Звёздная ночь', 'Последний день Помпеи', 'Грачи прилетели', 'Мокрый луг', 'Девятый вал'];
 const MESSAGE = ['Когда вы делаете фотографию, хорошо бы убирать палец из кадра. В конце концов это просто непрофессионально.', 'Моя бабушка случайно чихнула с фотоаппаратом в руках и у неё получилась фотография лучше.', 'Я поскользнулся на банановой кожуре и уронил фотоаппарат на кота и у меня получилась фотография лучше.',];
@@ -34,7 +34,7 @@ const getRandomPositiveInteger = (a, b) => {
   return Math.floor(result);
 };
 
-const generatePost = () => {
+const generatePost = (id) => {
   const randomNameIndex = getRandomPositiveInteger(0, NAMES.length - 1);
   const randomDescriptionIndex = getRandomPositiveInteger(0, DESCRIPTION.length - 1);
   const randomMassageIndex = getRandomPositiveInteger(0, MESSAGE.length - 1);
@@ -53,8 +53,8 @@ const generatePost = () => {
 const creatingArrayOne = () => {
   const descriptionPhoto = [];
   for (let i = 0; i < 25; i++) {
-    id = i + 1;
-    descriptionPhoto.push(generatePost());
+    // id = i + 1;
+    descriptionPhoto.push(generatePost(i));
   }
   return descriptionPhoto;
 };
