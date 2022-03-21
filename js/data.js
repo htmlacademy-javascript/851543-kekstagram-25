@@ -62,4 +62,3 @@ const creatingArrayOne = () => {
 creatingArrayOne();
 
 console.log(creatingArrayOne());
-export {NAMES, DESCRIPTION, MESSAGE, getRandomPositiveInteger, generatePost, creatingArrayOne};
