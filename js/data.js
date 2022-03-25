@@ -27,14 +27,10 @@ const generatePost = (a) => {
   };
 };
 
-const creatingArrayOne = () => {
+export const generatingArray = () => {
   const descriptionPhoto = [];
   for (let i = 0; i < 25; i++) {
     descriptionPhoto.push(generatePost(i + 1));
   }
   return descriptionPhoto;
 };
-
-creatingArrayOne();
-
-console.log(creatingArrayOne());
