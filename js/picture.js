@@ -1,19 +1,17 @@
 import { generatingArray } from './data.js';
 
-
 const newElement = document.querySelector('#picture');
-newElement.innerHTML = '';
 
+const similarPictureElement = newElement.content.querySelector('.picture');
+const similarListFragment = document.createDocumentFragment();
 
 const exportObject = generatingArray();
 exportObject.forEach((elem) => {
-  document.querySelector('#picture').insertAdjacentHTML('afterbegin', `
-  <a href="#" class="picture">
-    <img class="picture__img" src="${elem.url}" width="182" height="182" alt="${elem.description}">
-    <p class="picture__info">
-      <span class="picture__comments">${elem.comments.id}</span>
-      <span class="picture__likes">${elem.likes}</span>
-    </p>
-  </a>`);
-
+  const pictureElement = similarPictureElement.cloneNode(true);
+  pictureElement.querySelector('.picture__img').setAttribute('src', elem.url);
+  pictureElement.querySelector('.picture__comments').textContent = elem.comments.id;
+  pictureElement.querySelector('.picture__likes').textContent = elem.likes;
+  similarListFragment.appendChild(pictureElement);
 });
+
+newElement.after(similarListFragment);
