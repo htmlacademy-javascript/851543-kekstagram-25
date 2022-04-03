@@ -1,7 +1,7 @@
 import { generatingArray } from './data.js';
+const pictures =document.querySelector('.pictures');
 
 const newElement = document.querySelector('#picture');
-
 const similarPictureElement = newElement.content.querySelector('.picture');
 const similarListFragment = document.createDocumentFragment();
 
@@ -14,4 +14,4 @@ exportObject.forEach((elem) => {
   similarListFragment.appendChild(pictureElement);
 });
 
-newElement.after(similarListFragment);
+pictures.appendChild(similarListFragment);
