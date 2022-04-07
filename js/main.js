@@ -7,4 +7,8 @@ getRandomInt(0, 100);
 stringLength('Любая строка короче ста символов');
 
 import {generatePicture} from './picture.js';
-generatePicture();
+
+import {discovery} from './open_picture.js';
+discovery();
+
+import './window_rendering.js';
