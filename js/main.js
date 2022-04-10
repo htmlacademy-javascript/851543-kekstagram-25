@@ -11,4 +11,5 @@ import {generatePicture} from './picture.js';
 import {discovery} from './open_picture.js';
 discovery();
 
-import './window_rendering.js';
+import { bigPicture } from './window_rendering.js';
+bigPicture();

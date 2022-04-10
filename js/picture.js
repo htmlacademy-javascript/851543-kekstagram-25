@@ -19,10 +19,8 @@ export const generatePicture = () => {
 };
 generatePicture();
 
-const generateComment = () => {
+export const generateComment = () => {
   const social = document.querySelector('.social');
-  const hidden = document.createElement('template');
-  hidden.classList.add('commentElement');
   const socialHeader = document.querySelector('.social__header');
   const similarListFragment = document.createDocumentFragment();
   const exportObject = generatingArray();
@@ -36,4 +34,3 @@ const generateComment = () => {
   });
   social.prepend(similarListFragment);
 };
-generateComment();
