@@ -21,7 +21,7 @@ export const discovery = () => {
     commentLoader.classList.remove('hidden');
   });
   document.addEventListener('keydown', (e) => {
-    if (e.key == 'Escape') {
+    if (e.key === 'Escape') {
       bigPicture.classList.add('hidden');
       body.classList.remove('modal-open');
       commentCount.classList.remove('hidden');

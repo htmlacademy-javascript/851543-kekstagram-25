@@ -17,7 +17,6 @@ export const generatePicture = () => {
   });
   pictures.appendChild(similarListFragment);
 };
-generatePicture();
 
 export const generateComment = () => {
   const social = document.querySelector('.social');
