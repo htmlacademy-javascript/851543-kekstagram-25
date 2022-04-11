@@ -1,6 +1,7 @@
 import { generatingArray } from './data.js';
-export const img = [];
+import { discovery } from './open_picture.js';
 export const generatePicture = () => {
+  const bigPicture = document.querySelector('.big-picture');
   const pictures =document.querySelector('.pictures');
   const newElement = document.querySelector('#picture');
   const similarPictureElement = newElement.content.querySelector('.picture');
@@ -13,7 +14,10 @@ export const generatePicture = () => {
     pictureElement.querySelector('.picture__comments').textContent = elem.comments.id;
     pictureElement.querySelector('.picture__likes').textContent = elem.likes;
     similarListFragment.appendChild(pictureElement);
-    img.push(pictureElement);
+    pictureElement.addEventListener('click', () => {
+      bigPicture.classList.remove('hidden');
+      discovery();
+    });
   });
   pictures.appendChild(similarListFragment);
 };
