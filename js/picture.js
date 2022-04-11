@@ -1,5 +1,5 @@
 import { generatingArray } from './data.js';
-import { discovery } from './open_picture.js';
+import { openingBigPicture } from './open_picture.js';
 export const generatePicture = () => {
   const bigPicture = document.querySelector('.big-picture');
   const pictures =document.querySelector('.pictures');
@@ -16,7 +16,7 @@ export const generatePicture = () => {
     similarListFragment.appendChild(pictureElement);
     pictureElement.addEventListener('click', () => {
       bigPicture.classList.remove('hidden');
-      discovery();
+      openingBigPicture();
     });
   });
   pictures.appendChild(similarListFragment);

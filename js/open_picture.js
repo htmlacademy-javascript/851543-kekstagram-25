@@ -1,5 +1,5 @@
 
-export const discovery = () => {
+export const openingBigPicture = () => {
   const bigPicture = document.querySelector('.big-picture');
   const closeBtn = document.querySelector('.big-picture__cancel');
   const body = document.querySelector('body');
