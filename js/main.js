@@ -8,6 +8,3 @@ stringLength('Любая строка короче ста символов');
 
 import {generatePicture} from './picture.js';
 generatePicture();
-
-import { bigPicture } from './window_rendering.js';
-bigPicture();
