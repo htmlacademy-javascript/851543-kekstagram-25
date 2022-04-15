@@ -11,3 +11,5 @@ generatePicture();
 
 import {upLoad} from './upLoad.js';
 upLoad();
+
+import './validation.js';
